@@ -1,0 +1,474 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #3b3674;
+    background-image: url(../images/foot-bg.png);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+    background-size: 100%;
+}
+
+.w1400-img img {
+    max-width: 1400px;
+    min-width: 1200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.lucyDraw {
+    width: 1200px;
+    height: 625px;
+    margin: 0 auto;
+    background-image: url(../images/ld2.jpg);
+    background-size: 100%;
+}
+
+.turnplate {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    background-image: url(../images/turnplate-bg.png);
+    background-size: 100% 100%;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+#wheelcanvas {
+    width: 424px;
+    height: 424px;
+    background-image: url(../images/turnplate-ct.png);
+    background-size: 100% 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.turnplate .item {
+    margin-top: 38px;
+    margin-left: 38px;
+    border: none;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+
+.turnplate .pointer {
+    position: absolute;
+    top: 155px;
+    left: calc(50% - 60px);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.deepTime {
+    width: 1200px;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #ffdbb4;
+    font-family: 黑体;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deepTime span {
+    height: 40px;
+    width: 90px;
+    line-height: 40px;
+    display: inline-block;
+    background-color: #9c5d97;
+    border: 2px solid #de6891;
+    font-size: 24px;
+    color: #fefefe;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+.deepTime a {
+    color: #ffdbb4;
+    margin: 0 2px;
+}
+
+.deepTime a.logout {
+    margin-left: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.zjdt {
+    position: relative;
+    margin-top: 40px;
+}
+
+.zjdt .w754 {
+    width: 754px;
+    height: 100%;
+    position: absolute;
+    left: calc(50% - 377px);
+    top: 0;
+    overflow: hidden;
+}
+
+.zjdt .w754 a {
+    width: 185px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 10px;
+    display: block;
+    float: right;
+    background-color: #ff5a6e;
+}
+
+.w754_2 {
+    width: 754px;
+    margin: 20px auto;
+}
+
+.w754_2 table.th th {
+    background-color: #ff5a6e;
+    height: 40px;
+    text-align: center;
+    color: #fefeff;
+    font-weight: normal;
+}
+
+.w754_2 table td {
+    background-color: #fff;
+    height: 35px;
+    font-size: 16px;
+    color: #111555;
+    text-align: center;
+}
+
+.marqueeBox {
+    height: 140px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.setting {
+    margin-top: 50px;
+    position: relative;
+}
+
+.setting .w754 {
+    width: 754px;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 377px);
+    overflow: hidden;
+}
+
+.setting .w754 img {
+    width: 100% !important;
+    max-width: 100%;
+    min-width: 100%;
+    display: block;
+}
+
+.rule {
+    margin-top: 50px;
+}
+
+.w754_2 .txt {
+    color: #fff;
+    line-height: 30px;
+}
+
+.shadowBox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+}
+
+.shadowBox .itemBox {
+    position: relative;
+    display: none;
+}
+
+.shadowBox .close {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    z-index: 1000;
+    background-image: url(../images/close.png);
+    background-size: 100%;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.shadowBox .bigBox {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.prize {
+    width: 470px;
+    height: 615px;
+    background-image: url(../images/ld7.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1000;
+}
+
+.prize .pic {
+    text-align: center;
+    display: block;
+    width: 200px;
+    margin: 135px auto 0;
+}
+
+.prize .pic img {
+    width: 100%;
+}
+
+.prize .title {
+    font-size: 22px;
+    color: #ff5a6e;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.prize .btn {
+    position: absolute;
+    width: 215px;
+    height: 45px;
+    left: calc(50% - 107.5px);
+    bottom: 45px;
+    background-color: #9c5d97;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 45px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.writeInfo {
+    width: 370px;
+    height: 485px;
+    position: relative;
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 65px 50px;
+}
+
+.writeInfo h3 {
+    font-size: 22px;
+    color: #333;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.writeInfo h3 span {
+    color: #ff5a6e;
+    margin-left: 5px;
+}
+
+.writeInfo li {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+}
+
+.writeInfo li label {
+    width: 65px;
+    display: block;
+}
+
+.writeInfo li input {
+    width: 280px;
+    height: 40px;
+    margin-left: 5px;
+    outline: none;
+    padding: 0 10px;
+    font-size: 18px;
+    border: none;
+    background-color: #eeeeee;
+}
+
+.writeInfo li .sub {
+    width: 170px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    background-color: #9c5d97;
+    border-radius: 6px;
+    margin: 50px auto 0;
+    cursor: pointer;
+}
+
+.subSuccess {
+    width: 470px;
+    height: 615px;
+    background-image: url(../images/ld8.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1000;
+}
+
+.subSuccess .my {
+    width: 170px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    background-color: #9c5d97;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 85px);
+    cursor: pointer;
+}
+
+.noList {
+    width: 470px;
+    height: 615px;
+    background-image: url(../images/ld9.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1000;
+}
+
+.noList .close2 {
+    width: 170px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    background-color: #9c5d97;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 85px);
+    cursor: pointer;
+}
+
+.noDeefTime {
+    width: 470px;
+    height: 615px;
+    background-image: url(../images/ld11.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1000;
+}
+
+.noDeefTime .close2 {
+    width: 170px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    background-color: #9c5d97;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 85px);
+    cursor: pointer;
+}
+
+.hadList {
+    width: 420px;
+    height: 575px;
+    background-image: url(../images/ld10.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1000;
+    padding: 20px 25px;
+
+}
+
+.hadList .back {
+    width: 170px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    background-color: #9c5d97;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 30px auto 30px;
+}
+
+.hadList table.thead {
+    width: 420px;
+    margin: 300px auto 0;
+}
+
+.hadList .listBox {
+    width: 420px;
+    height: 160px;
+    background-color: #fff;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+    height: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 4px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 0 4px transparent;
+    background-color: #9c5d97;
+}
+
+.hadList .listBox table {
+    width: 100%;
+    text-align: center;
+}
+
+.hadList .listBox table th {
+    height: 40px;
+}
+
+.hadList .listBox table td {
+    height: 40px;
+}
+
+.hadList .listBox table td.red {
+    color: #ff5a6e;
+}

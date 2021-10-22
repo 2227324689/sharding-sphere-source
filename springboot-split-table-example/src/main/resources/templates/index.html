@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>模拟生成用户基础数据</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/Faker/3.1.0/faker.min.js"></script>
+</head>
+<body style="text-align: center;">
+    <div class="demo">初始化用户基础数据。</div>
+    <div>
+        <button id="initData">批量初始化数据</button>
+        <button id="addSignalData">添加单条数据</button>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        $("#initData").click(function(){
+            init();
+        });
+        $("#addSignalData").click(function(){
+            addSignal();
+        });
+    })
+    function addSignal(){
+        faker.locale = "zh_CN";//设置数据是中文类型
+        var id=Math.ceil(Math.random()*10);
+        var sex=id%3==0?"男":"女";
+        var firstName = faker.name.firstName(), lastName = faker.name.lastName();
+        var nickname=faker.name.findName(firstName, lastName).trim();
+        var email=faker.internet.email(firstName, lastName);
+        var phone=faker.phone.phoneNumberFormat();
+        var passwd=faker.internet.password();
+        var login_name=email;
+        var data={
+            "sex": sex,
+            "nickname": nickname,
+            "email": email,
+            "phone": phone,
+            "passwd": passwd,
+            "loginName": login_name
+        };
+        $.ajax({
+            type: "post",
+            url: "/users",
+            cache: false,
+            async: false,
+            contentType:"application/json",
+            data: JSON.stringify(data),
+            success: function (data) {
+            }
+        });
+    }
+    function init() {
+        faker.locale = "zh_CN";//设置数据是中文类型
+        var customers = []
+        for (var id = 0; id < 1000; id++) {
+            var sex=id%3==0?"男":"女";
+            var firstName = faker.name.firstName(), lastName = faker.name.lastName();
+            var nickname=faker.name.findName(firstName, lastName).trim();
+            var email=faker.internet.email(firstName, lastName);
+            var phone=faker.phone.phoneNumberFormat();
+            var passwd=faker.internet.password();
+            var login_name=email;
+            // 生成数组对象结构的数据
+            customers.push({
+                "sex": sex,
+                "nickname": nickname,
+                "email": email,
+                "phone": phone,
+                "passwd": passwd,
+                "loginName": login_name
+            });
+        }
+        $.ajax({
+            type: "post",
+            url: "/users/batch",
+            cache: false,
+            async: false,
+            contentType:"application/json",
+            data:JSON.stringify(customers),
+            success: function (data) {
+
+            }
+        });
+    }
+    // window.onloade = init()
+</script>
+</html>
